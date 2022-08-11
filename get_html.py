@@ -8,7 +8,8 @@ import json
 
 def gen_html(csv):
     df = pd.read_csv(csv)
-    screen_name = df["user_screen_name"][:-1]
+    # screen_name = df["user_screen_name"][:-1]
+    screen_name = df["tweet_id"][:-1]
     for i in range(len(screen_name)):
         name = screen_name[i]
         # Open browser in chrome
@@ -43,8 +44,8 @@ def gen_remain_html(json_file):
 
 
 def main():
-    # gen_html(csv="twitter_ids_small.csv")
-    gen_remain_html("record.jsonl")
+    gen_html(csv="to_annotate_tweets_100.csv")
+    # gen_remain_html("record.jsonl")
 
 
 
